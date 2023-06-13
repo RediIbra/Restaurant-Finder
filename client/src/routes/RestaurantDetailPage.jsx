@@ -5,13 +5,13 @@ import RestaurantFinder from "../apis/RestaurantFinder";
 import StarRating from "../components/StarRating";
 import Reviews from "../components/Reviews";
 import AddReview from "../components/AddReview";
-
+import { useNavigate } from "react-router-dom";
 const RestaurantDetailPage = () => {
+  const navigate= useNavigate()
   const { id } = useParams();
   const { selectedRestaurant, setSelectedRestaurant } = useContext(
     RestaurantsContext
   );
-  console.log(selectedRestaurant)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +29,7 @@ const RestaurantDetailPage = () => {
     <div>
       {selectedRestaurant && (
         <>
-          <h1 className="text-center display-1">
+          <h1 className="text-center display-1" onClick={()=>{navigate("/")}}>
             {selectedRestaurant.restaurants.name}
           </h1>
           <div className="text-center">

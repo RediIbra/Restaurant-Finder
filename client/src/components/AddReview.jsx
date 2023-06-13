@@ -9,7 +9,7 @@ const AddReview = () => {
   const [name, setName] = useState("");
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("Rating");
-
+  console.log(location)
   const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
@@ -17,10 +17,15 @@ const AddReview = () => {
         name,
         review: reviewText,
         rating,
-      });
-      navigate("/");
+      }).then( navigate("/"));
+      console.log(response)
       navigate(location.pathname);
-    } catch (err) {}
+
+      
+    } catch (err) {
+      console.log(err)
+    }
+
   };
   return (
     <div className="mb-2">
