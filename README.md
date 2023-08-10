@@ -8,5 +8,4 @@ You need to have PostgresSQL in order to run this project locally,also i have th
 -Run server in terminal -->cd server than npm start
 -Run project in local machine --> cd client than npm start
 
-
 You can create restaurant,update it also delete.Ive includet a star rating for each restaurant and you can have a view of each restaurant with star rating and coments.
